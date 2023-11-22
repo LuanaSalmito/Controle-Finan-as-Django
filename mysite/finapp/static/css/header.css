@@ -1,0 +1,147 @@
+.header-container {
+    background-color: #fafafa;
+  }
+  
+  header {
+    margin: auto;
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 60px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  header img {
+    max-width: 180px;
+  }
+  
+  header .nav-header {
+    display: flex;
+    align-items: center;
+  
+    gap: 60px;
+  }
+  
+  header .nav-header ul {
+    display: flex;
+    gap: 24px;
+  }
+  
+  header nav ul {
+    display: flex;
+  }
+  
+  header nav ul li {
+    list-style-type: none;
+  
+    color: #000;
+  
+    text-align: center;
+  
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.18px;
+  }
+  
+  header nav ul li a {
+    padding: 4px;
+  
+    position: relative;
+  }
+  
+  header nav ul li a::before {
+    content: "";
+    width: 0%;
+    height: 1px;
+  
+    position: absolute;
+  
+    bottom: 0;
+    left: 0;
+  
+    background-color: #000;
+    transition: width 0.2s ease-in;
+  }
+  
+  header nav ul li a:hover::before {
+    width: 100%;
+  }
+  
+  header header a {
+    color: black;
+    text-decoration: none;
+  }
+ 
+
+  .btn-entrar,
+  .btn-cadastrar {
+
+    box-sizing: border-box;
+    padding: 16px 48px;
+    text-align: center;
+    border-radius: 60px;
+  
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+
+    background-color: #F7F7F7;
+    box-shadow: 0px 5px 10px 0px rgba(89, 89, 89, 0.5);
+
+    transition: all 0.3s ease;
+  }
+  
+  
+  .menu-btn button {
+    background-color: transparent;
+    color: #000;
+    border: none;
+    font-size: 30px;
+  }
+  .menu-btn {
+    display: none;
+  }
+  .menu-mobile {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    transition: 0.3s;
+    display: none;
+  }
+  .active {
+    display: flex;
+  }
+  
+  @media (max-width: 768px) {
+    .menu-btn {
+      display: block;
+    }
+
+    .login-btns,
+    .menu-links {
+      display: none;
+    }
+  
+    nav ul li {
+      display: none;
+    }
+    header img {
+        max-width: 100px;
+      }
+  
+    .btn-entrar,
+    .btn-cadastrar {
+      display: none;
+    }
+  
+    #btn-continuar {
+      width: 300px;
+    }
+
+
+  }

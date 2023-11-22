@@ -1,0 +1,82 @@
+{% extends "finapp/base.html" %} {% load static %} {% block title %}
+Finapp {% endblock %}
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+{% endblock %}
+
+
+{%block content %}
+
+
+<div class="img-text-index">
+  <img class="img-index" src="{% static 'imagens/finapp.png' %}" alt="">
+
+  <div class="titulos-index">
+
+    <div class="titulo-main">
+      <h1>Gerencie suas finanças de forma prática e eficiente.</h1>
+    </div>
+
+    <h4>Aqui você simplifica o controle do seu dinheiro, mantemos suas receitas e despesas organizadas em períodos
+      financeiros personalizados.</h4>
+  </div>
+</div>
+
+
+<div class="diferecial-cards">
+  <h1>Sua forma personalizada e visual de organizar seu dinheiro.</h1>
+    <h4>Aqui estão alguns de nossos diferenciais:</h4>
+
+    <div class="cards-coloridos">
+
+      <div class="cardroxo">
+        <h5 class="titulo-card">Controle personalizado</h5>
+        <div class="card-img"><img src="{% static 'imagens/cardroxoimg.svg' %}" alt=""></div>
+        <p>Crie e personalize seus períodos financeiros conforme sua preferência - mensal, quinzenal ou totalmente
+          personalizado.</p>
+      </div>
+
+
+      <div class="cardrosa">
+        <h5 class="titulo-card">Simples e rápido</h5>
+        <div class="card-img"><img src="{% static 'imagens/cardrosaimg.svg' %}" alt=""></div>
+        <p>Registre suas receitas e despesas de forma rápida e simples. Mantenha o controle financeiro com facilidade,
+          deixando a complexidade de lado.</p>
+      </div>
+
+
+
+      <div class="cardaqua">
+        <h5 class="titulo-card">Veja o quadro completo</h5>
+        <div class="card-img">
+
+          <img src="{% static 'imagens/cardaquaimg.svg' %}" alt="">
+        </div>
+
+        <p>Explore os detalhes de cada período financeiro. Visualize seu saldo atual e revise o histórico de transações
+          para uma compreensão mais transparente.</p>
+      </div>
+
+
+      <div class="cardamarelo">
+        <h5 class="titulo-card">Pesquisa e segurança </h5>
+        <div class="card-img"><img src="{% static 'imagens/cardamareloimg.svg' %}" alt=""></div>
+        <p>Pesquise por nome, receita ou despesa para encontrar informações instantaneamente. Além disso, garantimos
+          segurança para proteger seus dados financeiros.</p>
+      </div>
+
+    </div>
+</div>
+
+<div class="planos-content">
+  <h1>Experimente um controle que realmente funciona e que tem tudo que você precisa.</h1>
+  <div></div>
+  <div></div>
+</div>
+
+
+
+
+
+{% endblock %}

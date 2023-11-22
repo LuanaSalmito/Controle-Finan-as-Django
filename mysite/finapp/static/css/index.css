@@ -1,0 +1,125 @@
+.img-text-index{
+    padding: 60px;
+    gap: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.img-index{
+    max-width: 500px;
+}
+ 
+h4{
+    font-weight: 400;
+    color: #6E6E6E ;
+    font-size: 20px;
+}
+h2{
+    font-size: 25px;
+}
+
+h5 .titulo-card{
+    font-size: 16px;
+}
+
+.titulos-index{
+    max-width: 700px;
+}
+
+.diferecial-cards{
+    padding: 60px;
+    text-align: center;
+    
+}
+
+
+.cards-coloridos{
+
+    display: flex;
+    padding:30px 0px ;
+    gap:15px;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+.cards-coloridos h5{
+    min-width: 265px;
+    display: block;
+}
+.cards-coloridos p {
+    max-width: 240px;
+    min-height: 170px;
+    margin: auto; 
+}
+
+.card-img{
+    min-height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.cardroxo{
+    background-color: #CFC0F8;
+    padding: 10px;
+    border-radius: 8px;
+    
+}
+
+.cardrosa{
+    background-color: #F2A2DD;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.cardaqua{
+    background-color: #ACF2D8;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.cardamarelo{
+    background-color: #F0F28D;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+
+
+@media (max-width: 1220px) {
+    .cards-coloridos{
+        flex-wrap: wrap;
+        width: 720px;
+        margin: auto;
+    }
+}
+@media (max-width: 850px) {
+    .cards-coloridos{
+        flex-wrap: nowrap;
+        flex-direction: column;
+        width: 100%;
+    }
+
+}
+@media (max-width: 768px) {
+
+
+    .img-index{
+        max-width: 300px;
+    }
+
+    .titulos-index{
+        max-width: 300px;
+    }
+
+    .img-text-index{
+        flex-direction: column-reverse;
+        padding: 15px;
+    }
+}
+
+
