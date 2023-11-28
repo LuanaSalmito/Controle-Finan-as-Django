@@ -1,0 +1,35 @@
+{% extends "finapp/base.html" %}
+{% load static %}
+{% block title %}
+    Entrar 
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/entrar.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+<div class="entrar-page">
+    <div class="entrar-infos">
+        <h1 class="entrar-titulo">
+            Bem vindo novamente!
+        </h1>
+    
+        <img class="img-entrar" src="{% static 'imagens/finentrar.svg' %}" >
+    </div>
+    
+    
+    <form class="entrar-form" action="">
+        <input class="entrar-input" type="email" placeholder="Email">
+    
+        <input class="entrar-input" type="password" placeholder="Senha">
+    
+        <button class="entrar-btn" type="submit">Entrar</button>
+    
+        <p>Cliente novo? <a class="link-cadastro" href= >Cadastre-se aqui.</a></p>
+    </form>
+</div>
+
+
+{% endblock %}

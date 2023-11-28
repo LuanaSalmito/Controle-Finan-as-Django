@@ -1,61 +1,62 @@
-.img-text-index{
+.img-text-index {
     padding: 60px;
     gap: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
-.img-index{
+.img-index {
     max-width: 500px;
 }
- 
-h4{
+
+h4 {
     font-weight: 400;
-    color: #6E6E6E ;
+    color: #6E6E6E;
     font-size: 20px;
 }
-h2{
+
+h2 {
     font-size: 25px;
 }
 
-h5 .titulo-card{
+h5 .titulo-card {
     font-size: 16px;
 }
 
-.titulos-index{
+.titulos-index {
     max-width: 700px;
 }
 
-.diferecial-cards{
+.diferecial-cards {
     padding: 60px;
     text-align: center;
-    
 }
 
 
-.cards-coloridos{
+.cards-coloridos {
 
     display: flex;
-    padding:30px 0px ;
-    gap:15px;
+    padding: 30px 0px;
+    gap: 15px;
     align-items: center;
     justify-content: center;
-    
 
 }
-.cards-coloridos h5{
+
+.cards-coloridos h5 {
     min-width: 265px;
     display: block;
 }
+
 .cards-coloridos p {
     max-width: 240px;
     min-height: 170px;
-    margin: auto; 
+    margin: auto;
 }
 
-.card-img{
+.card-img {
     min-height: 112px;
     display: flex;
     align-items: center;
@@ -63,63 +64,125 @@ h5 .titulo-card{
 }
 
 
-.cardroxo{
+
+.cardroxo,
+.cardrosa,
+.cardaqua,
+.cardamarelo {
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px 0px rgba(89, 89, 89, 0.5);
+
+}
+
+.cardroxo {
+    background-color: #CFC0F8;
+}
+
+.cardrosa {
+    background-color: #F2A2DD;
+}
+
+.cardaqua {
+    background-color: #ACF2D8;
+}
+
+.cardamarelo {
+    background-color: #F0F28D;
+}
+
+.planos-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    overflow: hidden;
+}
+
+.cards-valores {
+    display: flex;
+    gap: 40px;
+    padding: 15px;
+
+}
+
+.card-anual{
+    background-color: #F2A2DD;
+    min-width: 350px;
+    min-height: 90px;
+    padding: 25px;
+    box-shadow: 0px 5px 10px 0px rgba(89, 89, 89, 0.5);
+    gap: 20px;
+    border-radius: 5px;
+}
+.barraroxa{
     background-color: #CFC0F8;
     padding: 10px;
-    border-radius: 8px;
-    
+    box-shadow: 0px 5px 10px 0px rgba(89, 89, 89, 0.5);
+    position: relative;
+    border-radius: 5px;
 }
-
-.cardrosa{
-    background-color: #F2A2DD;
-    padding: 10px;
-    border-radius: 8px;
+.card-mensal{
+    background-color: #F0F28D;
+    min-width: 350px;
+    min-height: 90px;
+    padding: 25px;
+    box-shadow: 0px 5px 10px 0px rgba(89, 89, 89, 0.5);
+    gap: 20px;
+    border-radius: 5px;
 }
-
-.cardaqua{
+.barraaqua{
     background-color: #ACF2D8;
     padding: 10px;
-    border-radius: 8px;
+    box-shadow: 0px 5px 10px 0px rgba(89, 89, 89, 0.5);
+    position: relative;
+    border-radius: 5px;
 }
 
-.cardamarelo{
-    background-color: #F0F28D;
-    padding: 10px;
-    border-radius: 8px;
+.valores{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 
+h3{
+    font-size: 24px;
+}
 
-@media (max-width: 1220px) {
-    .cards-coloridos{
-        flex-wrap: wrap;
-        width: 720px;
-        margin: auto;
+@media (max-width: 768px) {
+
+
+    .img-index {
+        max-width: 300px;
+    }
+
+    .titulos-index {
+        max-width: 300px;
+    }
+
+    .img-text-index {
+        flex-direction: column-reverse;
+        padding: 15px;
     }
 }
+
 @media (max-width: 850px) {
-    .cards-coloridos{
+    .cards-coloridos {
         flex-wrap: nowrap;
         flex-direction: column;
         width: 100%;
     }
 
 }
-@media (max-width: 768px) {
 
-
-    .img-index{
-        max-width: 300px;
-    }
-
-    .titulos-index{
-        max-width: 300px;
-    }
-
-    .img-text-index{
-        flex-direction: column-reverse;
-        padding: 15px;
+@media (max-width: 1220px) {
+    .cards-coloridos {
+        flex-wrap: wrap;
+        width: 720px;
+        margin: auto;
     }
 }
-
-
