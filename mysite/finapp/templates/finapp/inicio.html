@@ -1,0 +1,102 @@
+{% extends "finapp/baselogado.html" %}
+{% load static %}
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/inicio.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+<div class="conteudo">
+
+    <div class="titulos-dash">
+        <h1 class="h1-black">
+            Balanço atual:
+        </h1>
+        <p class="h1-black">
+            (Novembro)
+        </p>
+    </div>
+    <div class="barra-pesquisa">
+      <form id="search-form" action="/search" method="get">
+          <div class="search-container">
+            <input
+              type="text"
+              id="search-input"
+              name="busca"
+              placeholder="Ex: 'Agosto', 'Viajem para Seul', 'Parcela processador'..."
+            />
+            <button type="submit" id="search-button" aria-label="Pesquisar">
+              <img src="{% static 'imagens/search.svg' %}" alt="Lupa" />
+            </button>
+          </div>
+        </form>
+    </div>
+
+      <div class="saldoehist">
+        
+
+        <div class="saldo-container">
+          <div class="saldo-texto">
+              <div class="saldo-titulo">
+                  <h1 class="h1-black2">Disponível</h1>
+              </div>
+              <div class="saldo-btn">
+                  <button>CONSULTAR GASTOS</button>
+              </div>
+          </div>
+          <div class="saldo-bola">
+              <div class="saldo-valor">
+                <h1 id="h1-black">R$2165,58</h1>
+              </div>
+          </div>
+        </div>
+
+        <div class="futuro-chart">
+        teste
+        </div>
+      </div>
+
+      <div class="historicoevariaveis">
+        <div>
+          <div class="ultimas-despesas">
+            <h3 class="h3-black">Últimas despesas:</h3>
+
+          </div>
+        </div>
+
+        <div class="gastos-chart">
+          teste
+
+        </div>
+      </div>
+
+      <div class="gastos-visiveis">
+        <div class="gasto-content">
+          teste
+        </div>
+        <div class="gasto-content">
+          teste
+
+        </div>
+        <div class="gasto-content">
+          teste
+        </div>
+        <div class="gasto-content">
+          teste
+
+        </div>
+      </div>
+
+
+
+    
+
+    
+</div>
+
+
+{% endblock %}

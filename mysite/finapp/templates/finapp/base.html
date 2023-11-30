@@ -12,6 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
+    
 
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
     <link rel="stylesheet" href="{% static 'css/header.css' %}" />
@@ -24,7 +25,7 @@
     <div class="header-container">
       <header>
         <div class="nav-header">
-          <img src="{% static 'imagens/logo.png' %}"/>
+          <img src="{% static 'imagens/logo.svg' %}"/>
           <nav>
             <ul>
               {% block nav %}
@@ -37,10 +38,11 @@
         </div>
 
         <div class="btns-header">
-          {% block buttons %}
-          <a class="btn-cadastrar" > Cadastre-se</a>
+         
+          <a href="{% url 'cadastrar' %}"class="btn-cadastrar" > Cadastre-se</a>
+
           <a href="{% url 'entrar' %}" class="btn-entrar"> Entrar</a>
-          {% endblock %}
+         
         </div>
 
         <div class="menu-btn">
@@ -65,7 +67,7 @@
     <footer>
       <div class="footer-content">
         <div class="footer-links">
-          <img src="{% static 'imagens/logo.png' %}" alt="Logo" class="logo" />
+          <img src="{% static 'imagens/logo.svg' %}" alt="Logo" class="logo" />
           <a class="footer-txt" href="#">Suporte</a>
           <a class="footer-txt" href="#">Política de privacidade</a>
         </div>
@@ -77,7 +79,7 @@
         <a href="https://www.instagram.com/">
           <div class="icone-rede">
             <img
-              src="{% static 'imagens/Instagram.svg' %}"
+              src="{% static 'imagens/instagram.svg' %}"
               alt=""
             />
           </div>

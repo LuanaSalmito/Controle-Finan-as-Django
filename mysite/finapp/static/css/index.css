@@ -6,6 +6,9 @@
     align-items: center;
 
 }
+h1{
+    color:  #551945;
+}
 
 .img-index {
     max-width: 500px;
@@ -13,11 +16,12 @@
 
 h4 {
     font-weight: 400;
-    color: #6E6E6E;
+    color:  #632a54;;
     font-size: 20px;
 }
 
 h2 {
+    color:  #551945;
     font-size: 25px;
 }
 

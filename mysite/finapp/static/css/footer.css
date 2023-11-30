@@ -6,6 +6,7 @@ footer {
     background-color: #FAFAFA;
     margin-top: 40px;
     font-family: "Poppins", sans-serif;
+    color: #d490c2;
 }
 
 
@@ -14,16 +15,18 @@ footer {
     gap: 40px;
     align-items: center;
     margin-bottom: 20px;
+    color: #d490c2;
 
 }
 
 .footer-links img {
-    width: 100px;
+    width: 80px;
 }
 
 .footer-redes {
     display: flex;
     gap: 20px;
+    color: #d490c2;;
 }
 
 .footer-txt:hover{
