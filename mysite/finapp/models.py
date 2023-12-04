@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Usuario(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     nome = models.CharField(max_length=255)
     sobrenome = models.CharField(max_length=255, null=True)
     email = models.EmailField()
@@ -20,7 +21,7 @@ class Usuario(models.Model):
         ordering = ['nome']
 
 
-class Balanço(models.Model):
+class Balanco(models.Model):
 
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     nome = models.CharField(max_length=30)
@@ -31,7 +32,7 @@ class Balanço(models.Model):
 
 class Receita(models.Model):
 
-    balanço = models.ForeignKey(Balanço, on_delete=models.CASCADE)
+    balanco = models.ForeignKey(Balanco, on_delete=models.CASCADE)
     descricao = models.CharField(max_length=255)
     valor = models.DecimalField(max_digits=10, decimal_places=2)
     data = models.DateField()
@@ -40,7 +41,7 @@ class Receita(models.Model):
 
 class Despesa(models.Model):
 
-    balanço = models.ForeignKey(Balanço, on_delete=models.CASCADE)
+    balanco = models.ForeignKey(Balanco, on_delete=models.CASCADE)
 
     descricao = models.CharField(max_length=255)
 
@@ -63,10 +64,10 @@ class Despesa(models.Model):
     ] 
     tipo = models.CharField(max_length=255, choices=despesa_escolha)
 
-class HistóricoBalanço(models.Model):
+class HistoricoBalanco(models.Model):
 
 
-    balanço = models.ForeignKey(Balanço, on_delete=models.CASCADE)
+    balanco = models.ForeignKey(Balanco, on_delete=models.CASCADE)
 
     date = models.DateField()
 

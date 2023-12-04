@@ -5,26 +5,28 @@
 {% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'cadastrar.css' %}" />
+<link rel="stylesheet" href="{% static 'css/cadastrar.css' %}" />
 {% endblock %}
 
 {% block content %}
-
-<h1> Cadastre-se e começe a usufruir das facilidades do FinApp</h1>
-
-
-<form class="cadastro" id="cadastro-form" method="post">
-    {% csrf_token %}
-    {% for field in formulario_cadastro %}
-        {{ field.errors }}
-        {{ field }}
-    {% endfor %}
-    <button class="btn-cadastrar" type="submit"> Cadastrar-se</button>
-    <p>Já possui conta? <a href="{% url 'entrar' %}"><u>Entre aqui.</u></a></p> 
-</form>
-
-
-
+<div class="cadastro-content">
+    
+    <h1> Cadastre-se e começe a usufruir do FinApp</h1>
+    
+    
+    <form class="cadastro" id="cadastro-form" method="post">
+        {% csrf_token %}
+        {% for field in formulario_cadastro %}
+            {{ field.errors }}
+            {{ field }}
+        {% endfor %}
+        <button class="btn-cadastrar" type="submit"> Cadastrar-se</button>
+        <p>Já possui conta? <a href="{% url 'entrar' %}"><u>Entre aqui.</u></a></p>
+    </form>
+    
+    
+    
+</div>
 
 
 {% endblock %}
