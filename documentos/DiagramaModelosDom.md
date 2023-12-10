@@ -1,3 +1,3 @@
-# 📊 Modelo de Domínio 📊
+# 📊 Classes de Domínio 📊
 
-![Modelo domínio](./imgs/DiagramaModeloDom.jpg)
+![Classes de domínio](./imgs/DiagramaModeloDom.jpg)
