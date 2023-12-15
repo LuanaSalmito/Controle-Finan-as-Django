@@ -20,7 +20,19 @@
     </div>
     
     
-    <form class="entrar-form" action="">
+    <form class="entrar-form" action="{% url 'login' %}">
+
+        {% csrf_token %}
+            {{ form.as_p }}
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            
         <input class="entrar-input" type="email" placeholder="Email">
     
         <input class="entrar-input" type="password" placeholder="Senha">

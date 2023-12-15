@@ -17,8 +17,10 @@ class Usuario(models.Model):
     ]
     genero = models.CharField(max_length=15, choices=genero_escolha)
 
-    class Meta:
-        ordering = ['nome']
+
+    def __str__(self):
+        return f"{self.nome} {self.sobrenome} - {self.email}"
+
 
 
 class Balanco(models.Model):
@@ -36,7 +38,7 @@ class Receita(models.Model):
     descricao = models.CharField(max_length=255)
     valor = models.DecimalField(max_digits=10, decimal_places=2)
     data = models.DateField()
-    foto = models.ImageField(upload_to='fotos/receitas')
+    
 
 
 class Despesa(models.Model):

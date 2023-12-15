@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from .forms import CadastroForm
+#from django.http import HttpResponse
+from mysite.finapp.forms import CadastroForm
 from finapp.models import Usuario
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
+from django.contrib import messages
 
 
 def index(request):
@@ -11,60 +12,66 @@ def index(request):
     context = {"temp": temp}
     return render(request, "finapp/index.html", context)
 
-def cadastrar(request):
 
+def cadastro(request):
     if request.method == "POST":
-        form_cadastro = CadastroForm(request.POST)
-
-        if form_cadastro.is_valid():
+        form = CadastroForm(request.POST)
+        if form.is_valid():
+            
             user = User.objects.create_user(
-                username=form_cadastro.cleaned_data['nome'],
-                email=form_cadastro.cleaned_data['email'],
-                password=form_cadastro.cleaned_data["senha"],
+                username=form.data["email"],
+                email=form.data["email"],
+                password=form.data["senha"],
+                first_name=form.data["nome"],
+                last_name=form.data["sobrenome"],
             )
+            user.save()
 
+            # Criar Usuário
             usuario = Usuario.objects.create(
                 user=user,
-                nome=form_cadastro.cleaned_data["nome"],
-                sobrenome=form_cadastro.cleaned_data["sobrenome"],
-                email=form_cadastro.cleaned_data["email"],
-                dataNascimento=form_cadastro.cleaned_data["dataNascimento"],
-                senha=form_cadastro.cleaned_data["senha"],
-                genero=form_cadastro.cleaned_data["genero"],
+                nome = form.data["nome"],
+                sobrenome = form.data["sobrenome"],
+                email=form.data["email"],
+                cpf=form.data["cpf"],
+                dataNascimento=form.data["dataNascimento"],
+                cep=form.data["cep"],
+                numero_residencia=form.data["numero_residencia"],
+                complemento_residencia=form.data["complemento_residencia"],
+                bairro=form.data["bairro"],
+                rua=form.data["rua"],
+                telefone=form.data["telefone"],
             )
-
             usuario.save()
 
             return redirect("entrar")
-        
     else:
-        form_cadastro = CadastroForm()
+        form = CadastroForm()
 
-    return render(request, "finapp/cadastrar.html", {"form_cadastro": form_cadastro})
-
-
-# def entrar(request):
-#     if request.method == "POST":
-#         form_login = LoginForm(request.POST)
-
-#         if form_login.is_valid():
-#             email = form_login.cleaned_data['email']
-#             senha = form_login.cleaned_data['senha']
-
-#             user = authenticate(request, username=email, password=senha)
-
-#             if user is not None:
-#                 login(request, user)
-#                 return redirect("dashboard")  
-#             else:
-#                 # Usuário não autenticado, trate conforme necessário
-#                 # Exemplo: Adicionar uma mensagem de erro ao formulário
-#     # else:
-#     #     form_login = LoginForm()
-
-#             return render(request, "finapp/entrar.html", {"form_login": form_login})
+    return render(request, "finapp/cadastre-se.html", {"form": form})
 
 
-# @login_required
-# def dashboard(request):
-#     return render(request, "finapp/dashboard.html")
+def entrar(request):
+    login = "entrar"
+    context = {"login": login}
+    return render(request, "finapp/entrar.html", context)
+
+def login(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['senha']
+        usuario = authenticate(username=email, password=password)
+
+        if usuario is not None:
+            login(request, usuario)
+            return redirect("dashboard")
+        else:
+            messages.success(request, 'Email ou senha inválidos. Por favor, tente novamente.')
+            return render(request, 'finapp/entrar.html')
+    else:
+        return redirect('entrar')
+
+
+
+def dashboard(request):
+     return render(request, "finapp/dashboard.html")
