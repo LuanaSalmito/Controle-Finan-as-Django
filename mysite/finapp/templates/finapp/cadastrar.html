@@ -10,12 +10,12 @@
 
 {% block content %}
 <div class="cadastro-content">
-    
+
     <h1> Cadastre-se e começe a usufruir do FinApp</h1>
-    
-    
+
+
     <form class="cadastro" id="cadastro-form" method="post">
-        
+
             {% csrf_token %}
         {% for field in form %}
             {{ field.errors }}
@@ -25,9 +25,9 @@
         <button class="btn-cadastrar" type="submit"> Cadastrar-se</button>
         <p>Já possui conta? <a href="{% url 'entrar' %}"><u>Entre aqui.</u></a></p>
     </form>
-    
-    
-    
+
+
+
 </div>
 
 

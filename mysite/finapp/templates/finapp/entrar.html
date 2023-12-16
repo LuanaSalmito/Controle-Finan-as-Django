@@ -1,7 +1,7 @@
 {% extends "finapp/base.html" %}
 {% load static %}
 {% block title %}
-    Entrar 
+    Entrar
 {% endblock %}
 
 {% block css %}
@@ -15,30 +15,21 @@
         <h1 class="entrar-titulo">
             Bem vindo novamente!
         </h1>
-    
+
         <img class="img-entrar" src="{% static 'imagens/finentrar.svg' %}" >
     </div>
-    
-    
-    <form class="entrar-form" action="{% url 'login' %}">
+
+
+    <form class="entrar-form" method="post" action="{% url 'login' %}">
 
         {% csrf_token %}
-            {{ form.as_p }}
-            {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                    <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-            {% endif %}
 
-            
-        <input class="entrar-input" type="email" placeholder="Email">
-    
-        <input class="entrar-input" type="password" placeholder="Senha">
-    
+        <input class="entrar-input" type="email" placeholder="Email" name="email" >
+
+        <input class="entrar-input" type="password" placeholder="Senha" name = "password" >
+
         <button class="entrar-btn" type="submit">Entrar</button>
-    
+
         <p id="cliente-novo">Cliente novo? <a class="link-cadastro" href= >Cadastre-se aqui.</a></p>
     </form>
 </div>
