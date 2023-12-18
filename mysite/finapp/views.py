@@ -1,10 +1,13 @@
 from django.shortcuts import render, redirect
 from finapp.forms.cadastro_usuario import CadastroForm
-from finapp.models import Usuario
+from finapp.models import Usuario, Balanco, Receita, Despesa
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.db.models import Sum
+from django.http import HttpResponseForbidden
+
 
 
 
@@ -95,32 +98,37 @@ def usuario_logout(request):
 
 
 
-# Pagina inicial pós autenticação
+# # Pagina inicial pós autenticação
+
+
+# def dashboard(request):
+#      return render(request, "finapp/dashboard.html")
+
+
+
+
+def calcular_saldo(balanco):
+    receitas = Receita.objects.filter(balanco=balanco).aggregate(soma_receitas=Sum('valor'))['soma_receitas'] or 0
+    despesas = Despesa.objects.filter(balanco=balanco).aggregate(soma_despesas=Sum('valor'))['soma_despesas'] or 0
+    saldo = balanco.saldo + receitas - despesas
+    return saldo
+
 
 @login_required
 def dashboard(request):
-     return render(request, "finapp/dashboard.html")
+    if request.user.is_authenticated:
+        usuario_atual = Usuario.objects.get(user=request.user)
 
+        balanco_atual = Balanco.objects.filter(usuario=usuario_atual).latest('ano', 'mes')
+        saldo_atual = calcular_saldo(balanco_atual)
+        contexto = {
+            'saldo_atual': saldo_atual,
+            'nome_balanco': balanco_atual.nome,  # Adiciona o atributo 'nome' ao contexto
+        }
 
+        return render(request, "finapp/dashboard.html", contexto)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return HttpResponseForbidden("Acesso não autorizado")
 
 
 
