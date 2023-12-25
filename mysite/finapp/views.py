@@ -101,10 +101,6 @@ def usuario_logout(request):
 # # Pagina inicial pós autenticação
 
 
-# def dashboard(request):
-#      return render(request, "finapp/dashboard.html")
-
-
 
 
 def calcular_saldo(balanco):

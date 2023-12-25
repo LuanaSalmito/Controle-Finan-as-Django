@@ -1,0 +1,238 @@
+/*---Titulos iniciais---*/
+.titulos-dash {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 15px;
+}
+
+/*-----Barra de pesquisa----*/
+
+.barradepesquisa{
+    width: 80%;
+}
+.search-container {
+    position: relative;
+    display: flex;
+}
+
+#search-input {
+    border-radius: 60px;
+    width: 100%;
+    padding-right: 30px;
+
+    outline: none;
+    border: 1px solid #ccc;
+
+    font-size: 12px;
+    padding: 20px 30px;
+}
+
+#search-button {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/*- Sessão de saldo dispo e chart historico-*/
+.saldoehist{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+} 
+/*-- Saldo disponivel--*/
+.saldo-container{
+    position: relative;
+    background-color: #F1F1F1;
+    border-radius: 15px;
+    display: flex;
+    gap: 20px;
+    color: black;
+    margin-top: 20px;
+    width: 410px;
+    
+    height: 220px;
+    overflow: hidden;
+    justify-content: space-between;
+    box-shadow: 0px 5px 10px 0px rgba(89, 89, 89, 0.5);
+}
+
+.saldo-texto{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    padding-right: 0;
+    gap: 60px;
+}
+
+.saldo-btn button{
+    position: absolute;
+    z-index: 100; 
+    padding: 15px 35px;
+    background-color: #AFADFE;
+    font-weight: 550;
+    font-size: 12px;
+    border: none;
+    box-shadow: 0px 5px 10px 0px rgba(89, 89, 89, 0.5);
+    border-radius: 30px;
+    color: #000;
+}
+.saldo-valor{
+    
+    margin-right: 30px;
+}
+.saldo-bola{
+    background-color: #7BF0C5;
+    padding: 25px;
+    border-radius: 50%;
+    border-top-right-radius:0;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+    height: 130%;
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    font-size: 20px;
+    position: absolute;
+    right: -40px;
+    top: -20px;
+    max-width: 400px;
+}
+
+/* Chart Histórico*/
+.futuro-chart{
+    background-color: #F1F1F1;
+    border-radius: 15px;
+    color: black;
+    margin-top: 20px;
+    width: 450px;
+    height: 220px;
+    box-shadow: 0px 5px 10px 0px rgba(89, 89, 89, 0.5);
+
+
+}
+
+/*-- Ultimas despesas e chart gastos */
+.historicoevariaveis{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 35px;
+} 
+.ultimas-despesas{
+    background-color: #F1F1F1;
+    border-radius: 15px;
+    color: black;
+    margin-top: 20px;
+    width: 410px;
+    height: 350px;
+    box-shadow: 0px 5px 10px 0px rgba(89, 89, 89, 0.5);
+}
+
+.gastos-chart{
+
+    background-color: #F1F1F1;
+    border-radius: 15px;
+    color: black;
+    margin-top: 20px;
+    width: 450px;
+    height: 350px;
+    box-shadow: 0px 5px 10px 0px rgba(89, 89, 89, 0.5);
+
+}
+
+
+/* Gasto 4 quadrados*/
+
+.gastos-visiveis{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap:35px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+
+}
+
+.gasto-content{
+    background-color: #F1F1F1;
+    border-radius: 15px;
+    color: black;
+    margin-top: 20px;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0px 5px 10px 0px rgba(89, 89, 89, 0.5);
+}
+
+/*--Ajustes nos textos--*/
+.h1-black,
+#h1-black{
+    color: black;
+
+}
+#h1-black{
+    font-size: 28px;
+}
+
+.saldo-valor h1{
+    font-size: 20px;
+
+}
+
+.h1-black2{
+    color: black;
+    font-size:34px;
+}
+.h3-black{
+    color: black;
+    font-size: 20px;
+}
+
+
+/*------Design responsivo-----*/
+@media (max-width: 768px) {
+
+    #search-input {
+        border-radius: 60px;
+        width: 100%;
+
+        padding-right: 10px;
+    
+        outline: none;
+        border: 1px solid #ccc;
+    
+        font-size: 10px;
+        padding: 15px 20px;
+    }
+
+    .saldoehist{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+    }
+
+    .historicoevariaveis{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .gastos-visiveis{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    
+}

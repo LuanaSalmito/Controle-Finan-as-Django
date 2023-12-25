@@ -27,9 +27,16 @@ class Balanco(models.Model):
 
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     nome = models.CharField(max_length=30)
-    mes = models.IntegerField()
-    ano = models.IntegerField()
-    saldo = models.DecimalField(max_digits=10, decimal_places=2)
+
+    saldoInicio = models.DecimalField(max_digits=10, decimal_places=2)
+
+    periodo_escolha = [
+        ('15 dias', '15 dias'),
+        ('30 dias', '30 dias'),
+    ]
+
+    periodo = models.CharField(max_length=15, choices = periodo_escolha)
+    
 
 
 class Receita(models.Model):
